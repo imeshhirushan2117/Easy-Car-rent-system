@@ -33,12 +33,20 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void deleteCustomer(String id) {
-
+        if(repo.existsById(id)){
+            repo.deleteById(id);
+        }else{
+            throw new RuntimeException("Customer Delete Fail..");
+        }
     }
 
     @Override
     public void updateCustomer(CustomerDTO customerDTO) {
-
+        if (repo.existsById(customerDTO.getId())){
+            repo.save(mapper.map(customerDTO,Customer.class));
+        }else{
+            throw new RuntimeException("Customer Update Fail..");
+        }
     }
 
     @Override
