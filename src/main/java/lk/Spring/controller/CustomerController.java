@@ -20,7 +20,7 @@ public class CustomerController {
     public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customerDTO) {
         customerService.saveCustomer(customerDTO);
 
-        return new ResponseUtil(200, "Saved", null);
+        return new ResponseUtil(200, "Customer Saved", null);
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -37,12 +37,12 @@ public class CustomerController {
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil deleteCustomer(@RequestParam String id){
        customerService.deleteCustomer(id);
-        return new ResponseUtil(200,"Deleted",null);
+        return new ResponseUtil(200,"Customer Deleted",null);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO){
         customerService.updateCustomer(customerDTO);
-        return new ResponseUtil(200,"Updated",null);
+        return new ResponseUtil(200,"Customer Updated",null);
     }
 }

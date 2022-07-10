@@ -7,6 +7,7 @@ import lk.Spring.entity.Stuff;
 import lk.Spring.repo.StuffRepo;
 import lk.Spring.service.StuffService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,6 +61,7 @@ public class StuffServiceImpl implements StuffService {
 
     @Override
     public List<StuffDTO> getAllStuff() {
-        return null;
+        return mapper.map(repo.findAll(),new TypeToken<List<StuffDTO>>(){
+        }.getType());
     }
 }
