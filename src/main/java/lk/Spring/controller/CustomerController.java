@@ -40,7 +40,7 @@ public class CustomerController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
-    @PutMapping(params = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO){
         customerService.updateCustomer(customerDTO);
         return new ResponseUtil(200,"Updated",null);

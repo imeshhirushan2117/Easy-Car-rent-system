@@ -31,4 +31,10 @@ public class StuffController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateStuff(@RequestBody StuffDTO stuffDTO){
+        stuffService.updateStuff(stuffDTO);
+        return new ResponseUtil(200,"Updated",null);
+    }
+
 }

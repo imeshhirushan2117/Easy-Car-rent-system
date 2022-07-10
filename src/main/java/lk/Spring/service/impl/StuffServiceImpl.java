@@ -1,6 +1,7 @@
 package lk.Spring.service.impl;
 
 import lk.Spring.dto.StuffDTO;
+import lk.Spring.entity.Customer;
 import lk.Spring.entity.Stuff;
 import lk.Spring.repo.StuffRepo;
 import lk.Spring.service.StuffService;
@@ -40,7 +41,11 @@ public class StuffServiceImpl implements StuffService {
 
     @Override
     public void updateStuff(StuffDTO stuffDTO) {
-
+        if (repo.existsById(stuffDTO.getStaff_Id())){
+            repo.save(mapper.map(stuffDTO, Stuff.class));
+        }else{
+            throw new RuntimeException("Stuff Update Fail..");
+        }
     }
 
     @Override
