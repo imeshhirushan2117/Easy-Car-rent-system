@@ -1,5 +1,6 @@
 package lk.Spring.service.impl;
 
+import lk.Spring.dto.CustomerDTO;
 import lk.Spring.dto.StuffDTO;
 import lk.Spring.entity.Customer;
 import lk.Spring.entity.Stuff;
@@ -50,7 +51,11 @@ public class StuffServiceImpl implements StuffService {
 
     @Override
     public StuffDTO searchStuff(String id) {
-        return null;
+        if (repo.existsById(id)) {
+            return mapper.map(repo.findById(id).get(), StuffDTO.class);
+        }else{
+            throw new RuntimeException("invalid Search..");
+        }
     }
 
     @Override

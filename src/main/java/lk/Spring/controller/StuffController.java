@@ -37,4 +37,9 @@ public class StuffController {
         return new ResponseUtil(200,"Updated",null);
     }
 
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchStuff(@PathVariable String id) {
+        return new ResponseUtil(200, "Done", stuffService.searchStuff(id));
+    }
+
 }
