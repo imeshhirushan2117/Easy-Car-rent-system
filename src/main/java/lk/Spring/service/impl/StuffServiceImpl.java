@@ -31,7 +31,11 @@ public class StuffServiceImpl implements StuffService {
 
     @Override
     public void deleteStuff(String id) {
-
+        if(repo.existsById(id)){
+            repo.deleteById(id);
+        }else{
+            throw new RuntimeException("Stuff Delete Fail..");
+        }
     }
 
     @Override
