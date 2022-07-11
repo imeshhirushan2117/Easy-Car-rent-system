@@ -37,4 +37,9 @@ public class RatesController {
         ratesService.updateRates(ratesDTO);
         return new ResponseUtil(200,"Rates Updated",null);
     }
+
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchRates(@PathVariable String id) {
+        return new ResponseUtil(200, "Done", ratesService.searchRates(id));
+    }
 }
