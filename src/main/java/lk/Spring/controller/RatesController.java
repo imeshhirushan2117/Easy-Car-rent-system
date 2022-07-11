@@ -42,4 +42,9 @@ public class RatesController {
     public ResponseUtil searchRates(@PathVariable String id) {
         return new ResponseUtil(200, "Done", ratesService.searchRates(id));
     }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllRates() {
+        return new ResponseUtil(200, "Done", ratesService.getAllRates());
+    }
 }

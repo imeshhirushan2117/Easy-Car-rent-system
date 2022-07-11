@@ -8,6 +8,7 @@ import lk.Spring.repo.RatesRepo;
 import lk.Spring.repo.StuffRepo;
 import lk.Spring.service.RatesService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,6 +61,7 @@ public class RatesServiceImpl implements RatesService {
 
     @Override
     public List<RatesDTO> getAllRates() {
-        return null;
+        return mapper.map(repo.findAll(),new TypeToken<List<RatesDTO>>(){
+        }.getType());
     }
 }
