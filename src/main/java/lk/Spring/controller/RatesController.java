@@ -25,5 +25,11 @@ public class RatesController {
         return new ResponseUtil(200,"Rates Saved",null);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @DeleteMapping(params ={"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteRates(@RequestParam String id){
+        ratesService.deleteRates(id);
+        return new ResponseUtil(200,"Rates  Deleted",null);
+    }
 
 }

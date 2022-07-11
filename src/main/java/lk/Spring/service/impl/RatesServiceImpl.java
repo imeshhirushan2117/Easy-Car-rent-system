@@ -32,7 +32,11 @@ public class RatesServiceImpl implements RatesService {
 
     @Override
     public void deleteRates(String id) {
-
+        if(repo.existsById(id)){
+            repo.deleteById(id);
+        }else{
+            throw new RuntimeException("Rates Delete Fail..");
+        }
     }
 
     @Override
