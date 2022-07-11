@@ -23,9 +23,10 @@ public class Rent {
     private String reason;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+
     @JoinColumn(name = "id",referencedColumnName = "id",nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "rent",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private List<Rent_Detail> rent_details;
 }

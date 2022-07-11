@@ -19,7 +19,7 @@ public class Rent_Detail {
     private String rent_Id;
     @Id
     private String registration_Number;
-    private LocalDate rent_Date;
+    private LocalDate checking;
     private LocalDate return_Date;
     private int kilometers;
     private double rental_Cost;
