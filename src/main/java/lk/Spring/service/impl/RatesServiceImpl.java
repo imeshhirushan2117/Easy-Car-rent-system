@@ -41,7 +41,11 @@ public class RatesServiceImpl implements RatesService {
 
     @Override
     public void updateRates(RatesDTO ratesDTO) {
-
+        if (repo.existsById(ratesDTO.getRate_Id())){
+            repo.save(mapper.map(ratesDTO, Rates.class));
+        }else{
+            throw new RuntimeException("Rates Update Fail..");
+        }
     }
 
     @Override

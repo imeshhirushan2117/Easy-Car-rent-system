@@ -32,4 +32,9 @@ public class RatesController {
         return new ResponseUtil(200,"Rates  Deleted",null);
     }
 
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateRates(@RequestBody RatesDTO ratesDTO){
+        ratesService.updateRates(ratesDTO);
+        return new ResponseUtil(200,"Rates Updated",null);
+    }
 }
