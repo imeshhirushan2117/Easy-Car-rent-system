@@ -10,11 +10,10 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
 @ToString
 
 public class RatesDTO {
-    @Id
+
     private String rate_Id;
     private double daily_Rate;
     private double monthly_rate;

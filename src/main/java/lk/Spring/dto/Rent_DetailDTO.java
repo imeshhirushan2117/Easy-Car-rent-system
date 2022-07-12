@@ -8,9 +8,9 @@ import java.util.List;
 
 public class Rent_DetailDTO {
 
-    @Id
+
     private String rent_Id;
-    @Id
+
     private String registration_Number;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate checking;

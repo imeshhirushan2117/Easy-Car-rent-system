@@ -11,10 +11,9 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
 @ToString
 public class StuffDTO {
-    @Id
+
     private String staff_Id;
     private String name;
     private String address;
