@@ -6,9 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Id;
 import java.time.LocalDate;
-import java.util.List;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
