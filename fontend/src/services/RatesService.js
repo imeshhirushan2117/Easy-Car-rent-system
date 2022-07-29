@@ -1,8 +1,8 @@
 import axios from '../axios';
 import qs from 'qs';
 
-class DriverService {
-    postDriver = async (data) => {
+class RatesService {
+    postRates = async (data) => {
         const promise = new Promise((resolve, reject) => {
             axios.post('Rates', qs.stringify(data))
                 .then((res) => {
@@ -14,7 +14,7 @@ class DriverService {
         return await promise;
     }
 
-    fetchPosts = async (data) => {
+    fetchRates = async (data) => {
         const promise = new Promise((resolve, reject) => {
             axios.get('Rates')
                 .then((res) => {
@@ -25,7 +25,7 @@ class DriverService {
         });
         return await promise;
     }
-    deleteStaff = async (params) => {
+    deleteRates= async (params) => {
         const promise = new Promise((resolve, reject) => {
             axios.delete('Rates', {params:params})
                 .then((res) => {
@@ -36,7 +36,7 @@ class DriverService {
         });
         return await promise;
     }
-    updateStaff = async (data) => {
+    updateRates = async (data) => {
         const promise = new Promise((resolve, reject) => {
             axios.put('Rates', data)
                 .then((res) => {
@@ -49,4 +49,4 @@ class DriverService {
     }
 }
 
-export default new DriverService();
+export default new RatesService();
