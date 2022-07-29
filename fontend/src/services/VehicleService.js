@@ -1,10 +1,10 @@
 import axios from '../axios';
 import qs from 'qs';
 
-class VehicleTypeService{
-    postVehicleType = async (data) => {
+class VehicleType{
+    postVehicle = async (data) => {
         const promise = new Promise((resolve, reject) => {
-            axios.post('VehicleType', qs.stringify(data))
+            axios.post('Vehicle', qs.stringify(data))
                 .then((res) => {
                     return resolve(res)
                 }).catch((err) => {
@@ -14,9 +14,9 @@ class VehicleTypeService{
         return await promise;
     }
 
-    fetchVehicleType = async (data) => {
+    fetchVehicle= async (data) => {
         const promise = new Promise((resolve, reject) => {
-            axios.get('VehicleType')
+            axios.get('Vehicle')
                 .then((res) => {
                     return resolve(res)
                 }).catch((err) => {
@@ -25,9 +25,9 @@ class VehicleTypeService{
         });
         return await promise;
     }
-    deleteVehicleType = async (params) => {
+    deleteVehicle = async (params) => {
         const promise = new Promise((resolve, reject) => {
-            axios.delete('VehicleType', {params:params})
+            axios.delete('Vehicle', {params:params})
                 .then((res) => {
                     return resolve(res)
                 }).catch((err) => {
@@ -36,9 +36,9 @@ class VehicleTypeService{
         });
         return await promise;
     }
-    updateVehicleType = async (data) => {
+    updateVehicle = async (data) => {
         const promise = new Promise((resolve, reject) => {
-            axios.put('VehicleType', data)
+            axios.put('Vehicle', data)
                 .then((res) => {
                     return resolve(res)
                 }).catch((err) => {
@@ -49,4 +49,4 @@ class VehicleTypeService{
     }
 }
 
-export default new VehicleTypeService();
+export default new VehicleType();
