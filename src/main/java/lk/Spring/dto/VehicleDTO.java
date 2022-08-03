@@ -7,6 +7,8 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -22,4 +24,5 @@ public class VehicleDTO {
     private String running_Km;
     private Vehicle_TypeDTO vehicleType;
     private RatesDTO rates;
+    private List<VehicleImgDTO> imgs;
 }

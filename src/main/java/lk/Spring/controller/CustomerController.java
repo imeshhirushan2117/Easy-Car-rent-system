@@ -45,4 +45,8 @@ public class CustomerController {
         customerService.updateCustomer(customerDTO);
         return new ResponseUtil(200,"Customer Updated",null);
     }
+    @GetMapping(path = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil userCount() {
+        return new ResponseUtil(200, "Ok", customerService.countUsers());
+    }
 }
